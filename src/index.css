@@ -34,6 +34,13 @@ body {
   overflow-x: hidden;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+}
+
 body.menu-locked,
 body.modal-locked {
   overflow: hidden;
@@ -261,6 +268,7 @@ p {
   align-items: center;
   gap: 12px;
   width: max-content;
+  min-width: 0;
 }
 
 .brand-mark {
@@ -360,8 +368,13 @@ p {
 .menu-btn {
   display: none;
   justify-self: end;
+  flex-shrink: 0;
   width: 46px;
+  min-width: 46px;
   height: 46px;
+  min-height: 46px;
+  place-items: center;
+  padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 50%;
   color: var(--white);
@@ -1250,7 +1263,10 @@ p {
 
 @media (max-width: 1040px) {
   .navbar {
-    grid-template-columns: 1fr auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
   }
 
   .desktop-nav,
@@ -1260,6 +1276,17 @@ p {
 
   .menu-btn {
     display: grid;
+  }
+
+  .brand {
+    width: auto;
+    max-width: calc(100% - 56px);
+    flex: 1 1 auto;
+    gap: 10px;
+  }
+
+  .brand > span:not(.brand-mark) {
+    min-width: 0;
   }
 
   .mobile-menu {
@@ -1293,6 +1320,7 @@ p {
   .hero-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-self: start;
+    width: 100%;
   }
 
   .course-rail {
@@ -1314,7 +1342,7 @@ p {
 @media (max-width: 720px) {
   .container,
   .navbar {
-    width: min(100% - 28px, var(--max));
+    width: min(100% - 24px, var(--max));
   }
 
   .announcement {
@@ -1331,16 +1359,56 @@ p {
     display: none;
   }
 
+  .brand strong {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 0.86rem;
+    line-height: 1.08;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .brand-mark {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+  }
+
+  .brand-mark.logo-mark img {
+    border-radius: 8px;
+  }
+
+  .menu-btn {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+  }
+
   .hero {
+    height: auto;
     min-height: 100svh;
     padding-top: 132px;
+    padding-bottom: 30px;
+    background: #091120;
+  }
+
+  .hero-bg,
+  .hero-overlay {
+    bottom: auto;
+    height: 465px;
   }
 
   .hero-inner {
-    min-height: calc(100svh - 132px);
-    align-content: center;
-    gap: 28px;
-    padding-bottom: 86px;
+    min-height: 0;
+    align-content: start;
+    align-items: start;
+    gap: 22px;
+    padding-bottom: 0;
+  }
+
+  .hero-copy p {
+    margin-bottom: 24px;
   }
 
   .hero-stats,
@@ -1353,6 +1421,17 @@ p {
   .modal-meta,
   .modal-lists {
     grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    position: relative;
+    z-index: 4;
+    margin-top: 14px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(9, 17, 32, 0.98), rgba(13, 24, 43, 0.98));
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
   }
 
   .section {
@@ -1387,7 +1466,25 @@ p {
   }
 
   .hero-controls {
-    bottom: 22px;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: max-content;
+    max-width: calc(100% - 28px);
+    margin: 24px auto 0;
+    transform: none;
+  }
+
+  .floating-stat {
+    width: 100%;
+    min-height: 82px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .floating-stat strong {
+    margin-top: 10px;
+    font-size: 2rem;
   }
 
   .modal-backdrop {
@@ -1429,8 +1526,25 @@ p {
   }
 
   .brand-mark {
-    width: 44px;
-    height: 44px;
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+  }
+
+  .brand {
+    gap: 8px;
+    max-width: calc(100% - 48px);
+  }
+
+  .brand strong {
+    font-size: 0.78rem;
+  }
+
+  .menu-btn {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    min-height: 38px;
   }
 
   .announcement {

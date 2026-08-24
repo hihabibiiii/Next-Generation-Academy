@@ -66,7 +66,7 @@ export default function Hero({ onEnroll }) {
           </motion.div>
         </AnimatePresence>
 
-        <motion.div className="hero-stats" initial={{ opacity: 0, x: 26 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.55 }}>
+        <motion.div className="hero-stats" initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}>
           {performanceStats.map(({ icon: Icon, value, label }) => (
             <div key={label} className="floating-stat">
               <Icon size={22} />
