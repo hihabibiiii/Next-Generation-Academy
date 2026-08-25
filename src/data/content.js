@@ -4,7 +4,6 @@ import {
   BookOpen,
   BriefcaseBusiness,
   Building2,
-  ChartNoAxesCombined,
   GraduationCap,
   Laptop,
   Library,
@@ -87,9 +86,4 @@ export const stats = [
   { value: 5000, suffix: "+", label: "Students" },
   { value: 20, suffix: "+", label: "Courses" },
   { value: 90, suffix: "%+", label: "Placement Assistance" },
-];
-
-export const performanceStats = [
-  { icon: Users, value: "5000+", label: "Students Trained" },
-  { icon: ChartNoAxesCombined, value: "20+", label: "Professional Courses" },
 ];

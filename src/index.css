@@ -439,37 +439,6 @@ p {
   flex-wrap: wrap;
 }
 
-.hero-stats {
-  display: grid;
-  gap: 16px;
-}
-
-.floating-stat {
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius);
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
-}
-
-.floating-stat svg {
-  color: #ffd382;
-}
-
-.floating-stat strong {
-  display: block;
-  margin-top: 14px;
-  font-size: 2.25rem;
-  line-height: 1;
-}
-
-.floating-stat span {
-  color: rgba(255, 255, 255, 0.78);
-  font-weight: 750;
-}
-
 .hero-controls {
   position: absolute;
   left: 50%;
@@ -1245,22 +1214,6 @@ p {
   flex-wrap: wrap;
 }
 
-.success-state {
-  display: grid;
-  place-items: center;
-  min-height: 430px;
-  padding: 36px;
-  text-align: center;
-}
-
-.success-state svg {
-  color: var(--success);
-}
-
-.success-state p {
-  max-width: 360px;
-}
-
 @media (max-width: 1040px) {
   .navbar {
     display: flex;
@@ -1315,12 +1268,6 @@ p {
   .testimonial-layout,
   .course-modal {
     grid-template-columns: 1fr;
-  }
-
-  .hero-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-self: start;
-    width: 100%;
   }
 
   .course-rail {
@@ -1411,7 +1358,6 @@ p {
     margin-bottom: 24px;
   }
 
-  .hero-stats,
   .mission-cards,
   .stats-grid,
   .feature-grid,
@@ -1421,17 +1367,6 @@ p {
   .modal-meta,
   .modal-lists {
     grid-template-columns: 1fr;
-  }
-
-  .hero-stats {
-    position: relative;
-    z-index: 4;
-    margin-top: 14px;
-    padding: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius);
-    background: linear-gradient(180deg, rgba(9, 17, 32, 0.98), rgba(13, 24, 43, 0.98));
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
   }
 
   .section {
@@ -1473,18 +1408,6 @@ p {
     max-width: calc(100% - 28px);
     margin: 24px auto 0;
     transform: none;
-  }
-
-  .floating-stat {
-    width: 100%;
-    min-height: 82px;
-    padding: 18px;
-    background: rgba(255, 255, 255, 0.09);
-  }
-
-  .floating-stat strong {
-    margin-top: 10px;
-    font-size: 2rem;
   }
 
   .modal-backdrop {

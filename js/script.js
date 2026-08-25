@@ -1,6 +1,6 @@
 const institute = {
   name: "NGA Academy",
-  phone: "+91 98765 43210",
+  phone: "+91 9839848517",
   email: "admissions@ngaacademy.example"
 };
 

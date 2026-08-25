@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
-import { heroSlides, performanceStats } from "../data/content";
+import { heroSlides } from "../data/content";
 import { fadeUp, staggerContainer } from "../motion";
 
 export default function Hero({ onEnroll }) {
@@ -66,15 +66,6 @@ export default function Hero({ onEnroll }) {
           </motion.div>
         </AnimatePresence>
 
-        <motion.div className="hero-stats" initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}>
-          {performanceStats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="floating-stat">
-              <Icon size={22} />
-              <strong>{value}</strong>
-              <span>{label}</span>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
       <div className="hero-controls">

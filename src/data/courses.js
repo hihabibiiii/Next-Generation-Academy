@@ -101,7 +101,7 @@ export const instituteInfo = {
   name: "Next Generation Academy",
   shortName: "N.G.A",
   tagline: "Learn Today, Lead Tomorrow",
-  phone: "+91 98765 43210",
+  phone: "+91 9839848517",
   email: "admissions@ngaacademy.example",
   address: "2nd Floor, Learning Plaza, Main Road, Your City",
   hours: "Mon - Sat, 9:00 AM - 7:00 PM",

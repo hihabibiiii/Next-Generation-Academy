@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CheckCircle2, X } from "lucide-react";
+import { X } from "lucide-react";
 import { courses } from "../data/courses";
+import { sendEnrollmentToWhatsApp } from "../utils/whatsapp";
 
 const emptyForm = {
   studentName: "",
@@ -11,16 +12,16 @@ const emptyForm = {
   course: "",
   qualification: "",
   address: "",
+  message: "",
 };
 
 export default function EnrollmentModal({ open, selectedCourse, onClose }) {
   const [form, setForm] = useState(emptyForm);
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     if (!open) return undefined;
-    setForm((current) => ({ ...emptyForm, ...current, course: selectedCourse || current.course }));
+    setForm({ ...emptyForm, course: selectedCourse || "" });
     const onKey = (event) => {
       if (event.key === "Escape") onClose();
     };
@@ -34,7 +35,6 @@ export default function EnrollmentModal({ open, selectedCourse, onClose }) {
 
   useEffect(() => {
     if (!open) {
-      setSubmitted(false);
       setErrors({});
     }
   }, [open]);
@@ -47,8 +47,8 @@ export default function EnrollmentModal({ open, selectedCourse, onClose }) {
 
   const validate = () => {
     const next = {};
-    Object.entries(form).forEach(([key, value]) => {
-      if (!value.trim()) next[key] = "Required";
+    ["studentName", "mobile", "course", "qualification", "address"].forEach((key) => {
+      if (!form[key].trim()) next[key] = "Required";
     });
     if (form.email && !/^\S+@\S+\.\S+$/.test(form.email)) next.email = "Enter a valid email";
     if (form.mobile && !/^[0-9+\-\s]{8,15}$/.test(form.mobile)) next.mobile = "Enter a valid mobile number";
@@ -61,11 +61,21 @@ export default function EnrollmentModal({ open, selectedCourse, onClose }) {
     setErrors(next);
     if (Object.keys(next).length) return;
 
+    const enrollmentData = {
+      name: form.studentName,
+      parentName: form.guardianName,
+      mobile: form.mobile,
+      email: form.email,
+      course: form.course,
+      qualification: form.qualification,
+      address: form.address,
+      message: form.message,
+    };
     const saved = JSON.parse(localStorage.getItem("ngaEnrollmentRequests") || "[]");
-    saved.push({ ...form, submittedAt: new Date().toISOString() });
+    saved.push({ ...enrollmentData, submittedAt: new Date().toISOString() });
     localStorage.setItem("ngaEnrollmentRequests", JSON.stringify(saved));
-    setSubmitted(true);
-    setForm(emptyForm);
+
+    sendEnrollmentToWhatsApp(enrollmentData);
   };
 
   const field = (name, label, type = "text") => (
@@ -91,43 +101,36 @@ export default function EnrollmentModal({ open, selectedCourse, onClose }) {
             onMouseDown={(event) => event.stopPropagation()}
           >
             <button className="modal-close" type="button" aria-label="Close enrollment form" onClick={onClose}><X size={22} /></button>
-            {submitted ? (
-              <div className="success-state">
-                <CheckCircle2 size={58} />
-                <h2>Application Submitted!</h2>
-                <p>Our admission team will contact you shortly.</p>
-                <button className="btn btn-primary" type="button" onClick={onClose}>Done</button>
+            <span className="eyebrow">Admissions</span>
+            <h2 id="enroll-title">Enrollment Application</h2>
+            <form className="enroll-form" onSubmit={submit} noValidate>
+              {field("studentName", "Student Name")}
+              {field("guardianName", "Father's/Mother's Name")}
+              {field("mobile", "Mobile", "tel")}
+              {field("email", "Email", "email")}
+              <label className={`float-field ${errors.course ? "has-error" : ""}`}>
+                <select name="course" value={form.course} onChange={update}>
+                  <option value="">Select Course</option>
+                  {courses.map((course) => <option key={course.id} value={course.title}>{course.title}</option>)}
+                </select>
+                <span>Course</span>
+                {errors.course && <small>{errors.course}</small>}
+              </label>
+              {field("qualification", "Qualification")}
+              <label className={`float-field full ${errors.address ? "has-error" : ""}`}>
+                <textarea name="address" value={form.address} onChange={update} rows="4" placeholder=" " />
+                <span>Address</span>
+                {errors.address && <small>{errors.address}</small>}
+              </label>
+              <label className="float-field full">
+                <textarea name="message" value={form.message} onChange={update} rows="3" placeholder=" " />
+                <span>Message</span>
+              </label>
+              <div className="modal-actions full">
+                <button className="btn btn-primary" type="submit">Submit & Continue to WhatsApp</button>
+                <button className="btn btn-muted" type="button" onClick={onClose}>Cancel</button>
               </div>
-            ) : (
-              <>
-                <span className="eyebrow">Admissions</span>
-                <h2 id="enroll-title">Enrollment Application</h2>
-                <form className="enroll-form" onSubmit={submit} noValidate>
-                  {field("studentName", "Student Name")}
-                  {field("guardianName", "Father's/Mother's Name")}
-                  {field("mobile", "Mobile", "tel")}
-                  {field("email", "Email", "email")}
-                  <label className={`float-field ${errors.course ? "has-error" : ""}`}>
-                    <select name="course" value={form.course} onChange={update}>
-                      <option value="">Select Course</option>
-                      {courses.map((course) => <option key={course.id} value={course.title}>{course.title}</option>)}
-                    </select>
-                    <span>Course</span>
-                    {errors.course && <small>{errors.course}</small>}
-                  </label>
-                  {field("qualification", "Qualification")}
-                  <label className={`float-field full ${errors.address ? "has-error" : ""}`}>
-                    <textarea name="address" value={form.address} onChange={update} rows="4" placeholder=" " />
-                    <span>Address</span>
-                    {errors.address && <small>{errors.address}</small>}
-                  </label>
-                  <div className="modal-actions full">
-                    <button className="btn btn-primary" type="submit">Submit Application</button>
-                    <button className="btn btn-muted" type="button" onClick={onClose}>Cancel</button>
-                  </div>
-                </form>
-              </>
-            )}
+            </form>
           </motion.div>
         </motion.div>
       )}

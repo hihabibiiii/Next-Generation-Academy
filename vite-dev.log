@@ -7,3 +7,14 @@
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: http://192.168.1.12:5173/
+10:11:24 pm [vite] hmr update /src/components/Hero.jsx
+10:11:24 pm [vite] hmr update /src/components/Facilities.jsx, /src/components/About.jsx, /src/components/Footer.jsx, /src/components/Testimonials.jsx, /src/components/WhyChooseUs.jsx, /src/components/Hero.jsx, /src/components/Navbar.jsx
+10:11:24 pm [vite] hmr update /src/index.css
+10:15:40 pm [vite] hmr update /src/components/EnrollmentModal.jsx
+10:16:13 pm [vite] hmr update /src/index.css
+10:33:55 pm [vite] hmr update /src/components/Contact.jsx, /src/components/Footer.jsx, /src/components/CourseSection.jsx, /src/components/EnrollmentModal.jsx, /src/components/Navbar.jsx
+10:33:58 pm [vite] hmr update /src/components/Contact.jsx, /src/components/Footer.jsx, /src/components/CourseSection.jsx, /src/components/EnrollmentModal.jsx, /src/components/Navbar.jsx
+10:39:01 pm [vite] hmr update /src/components/EnrollmentModal.jsx
+10:39:02 pm [vite] hmr update /src/components/EnrollmentModal.jsx
+10:39:10 pm [vite] hmr update /src/components/EnrollmentModal.jsx
+10:39:14 pm [vite] hmr update /src/components/EnrollmentModal.jsx
