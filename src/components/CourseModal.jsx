@@ -33,7 +33,7 @@ export default function CourseModal({ course, onClose, onEnroll }) {
             onMouseDown={(event) => event.stopPropagation()}
           >
             <button className="modal-close" type="button" aria-label="Close course details" onClick={onClose}><X size={22} /></button>
-            <img src={course.image} alt={course.title} loading="lazy" />
+            <img src={course.image} alt={`${course.title} course details`} loading="lazy" width="900" height="520" />
             <motion.div variants={staggerContainer} initial="hidden" animate="visible">
               <motion.span className="eyebrow" variants={fadeUp}>Course Details</motion.span>
               <motion.h2 id="course-modal-title" variants={fadeUp}>{course.title}</motion.h2>

@@ -1,0 +1,22 @@
+{
+  "name": "Next Generation Academy",
+  "short_name": "N.G.A",
+  "description": "Practical skill training institute for computer, coding, accounting, design, marketing, data science, and safety courses.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b7a5f",
+  "icons": [
+    {
+      "src": "/site-icon.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/site-icon.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

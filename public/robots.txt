@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /login
+Disallow: /login/
+Disallow: /private
+Disallow: /private/
+
+Sitemap: https://next-generation-academy.vercel.app/sitemap.xml

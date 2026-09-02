@@ -1,3 +1,15 @@
+import computerScienceImage from "../assets/images/computerScience.avif";
+import webDevImage from "../assets/images/webdev.avif";
+import pythonImage from "../assets/images/python.avif";
+import dataScienceImage from "../assets/images/dataScience.avif";
+import fullStackDevImage from "../assets/images/fullStackDev.avif";
+import graphicDesignImage from "../assets/images/graphicDesgin.avif";
+import tallyImage from "../assets/images/tally.avif";
+import digitalMarketingImage from "../assets/images/digitalMarketing.avif";
+import dcaImage from "../assets/images/dca.avif";
+import adcaImage from "../assets/images/adca.avif";
+import safetyImage from "../assets/images/saftey.avif";
+
 export const courses = [
   {
     id: 1,
@@ -7,7 +19,7 @@ export const courses = [
     duration: "12 Months",
     fees: "Rs. 30000",
     eligibility: "10th Pass",
-    image: "../src/assets/images/computerScience.avif",
+    image: computerScienceImage,
     highlights: ["Computer fundamentals", "MS Office", "Internet skills", "Programming basics", "Practical assignments"],
     career: ["Computer Operator", "Office Assistant", "Junior IT Assistant"],
   },
@@ -21,7 +33,7 @@ export const courses = [
     duration: "4 Months",
     fees: "Rs. 2900",
     eligibility: "10th Pass",
-    image: "../src/assets/images/webdev.avif",
+    image: webDevImage,
     highlights: ["HTML5 and CSS3", "Responsive design", "Vanilla JavaScript", "Website publishing"],
     career: ["Web Designer", "Frontend Trainee", "Freelance Developer"],
   },
@@ -33,7 +45,7 @@ export const courses = [
     duration: "3 Months",
     fees: "Rs. 4000",
     eligibility: "12th Pass",
-    image: "../src/assets/images/python.avif",
+    image: pythonImage,
     highlights: ["Core Python", "File handling", "Automation scripts", "Mini projects"],
     career: ["Python Trainee", "Automation Assistant", "Junior Developer"],
   },
@@ -45,7 +57,7 @@ export const courses = [
     duration: "6 Months",
     fees: "Rs. 12000",
     eligibility: "12th Pass with basic math",
-    image: "../src/assets/images/dataScience.avif",
+    image: dataScienceImage,
     highlights: ["Python for data", "Pandas and NumPy", "Charts and dashboards", "Capstone project"],
     career: ["Data Analyst Trainee", "MIS Executive", "Reporting Assistant"],
   },
@@ -57,7 +69,7 @@ export const courses = [
     duration: "6 Months",
     fees: "Rs. 2900",
     eligibility: "12th Pass",
-    image: "../src/assets/images/fullStackDev.avif",
+    image: fullStackDevImage,
     highlights: ["HTML and CSS", "JavaScript", "React", "Node.js", "MongoDB"],
     career: ["Frontend Developer", "Backend Developer", "Full Stack Developer"],
   },
@@ -69,7 +81,7 @@ export const courses = [
     duration: "4 Months",
     fees: "Rs. 9000",
     eligibility: "10th Pass",
-    image: "../src/assets/images/graphicDesgin.avif",
+    image: graphicDesignImage,
     highlights: ["Design principles", "Photoshop workflow", "Illustrator basics", "Portfolio projects"],
     career: ["Graphic Designer", "Creative Assistant", "Freelance Designer"],
   },
@@ -81,7 +93,7 @@ export const courses = [
     duration: "3 Months",
     fees: "Rs. 5000",
     eligibility: "10th Pass",
-    image: "../src/assets/images/tally.avif",
+    image: tallyImage,
     highlights: ["Accounting basics", "Tally Prime", "GST entries", "Reports and invoices"],
     career: ["Accounts Assistant", "Billing Executive", "Tally Operator"],
   },
@@ -93,7 +105,7 @@ export const courses = [
     duration: "4 Months",
     fees: "Rs. 18000",
     eligibility: "12th Pass",
-    image: "../src/assets/images/digitalMarketing.avif",
+    image: digitalMarketingImage,
     highlights: ["SEO fundamentals", "Social media marketing", "Ad campaign basics", "Analytics reports"],
     career: ["Digital Marketing Trainee", "Social Media Executive", "SEO Assistant"],
   },
@@ -105,7 +117,7 @@ export const courses = [
   duration: "6 Months",
   fees: "Rs. 6000",
   eligibility: "10th Pass",
-  image: "../src/assets/images/dca.avif",
+  image: dcaImage,
   highlights: [
     "Computer fundamentals",
     "MS Office & Advanced Excel",
@@ -130,7 +142,7 @@ export const courses = [
   duration: "12 Months",
   fees: "Rs. 12000",
   eligibility: "10th Pass",
-  image: "../src/assets/images/adca.avif",
+  image: adcaImage,
   highlights: [
     "Advanced computer applications",
     "MS Office & Advanced Excel",
@@ -157,7 +169,7 @@ export const courses = [
   duration: "12 Months",
   fees: "Rs. 30,000",
   eligibility: "10th Pass",
-  image: "../src/assets/images/saftey.avif",
+  image: safetyImage,
   highlights: [
     "Occupational health & safety",
     "Hazard identification",

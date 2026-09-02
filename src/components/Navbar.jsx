@@ -68,7 +68,7 @@ export default function Navbar({ onEnroll }) {
     >
       <nav className="navbar" aria-label="Primary navigation">
         <a href="#home" className="brand" aria-label={`${instituteInfo.name} home`}>
-          <span className="brand-mark logo-mark"><img src={logo} alt="" /></span>
+          <span className="brand-mark logo-mark"><img src={logo} alt="" width="44" height="44" /></span>
           <span>
             <strong>{instituteInfo.name}</strong>
             <small>{instituteInfo.tagline}</small>

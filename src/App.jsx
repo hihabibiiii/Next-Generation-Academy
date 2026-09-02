@@ -12,6 +12,7 @@ import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Seo from "./seo/Seo";
 
 export default function App() {
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -26,6 +27,7 @@ export default function App() {
 
   return (
     <>
+      <Seo />
       <AnnouncementBar onEnroll={() => openEnroll()} />
       <Navbar onEnroll={() => openEnroll()} />
       <main>

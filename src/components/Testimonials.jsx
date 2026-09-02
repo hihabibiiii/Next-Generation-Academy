@@ -36,7 +36,7 @@ export default function Testimonials() {
               <div className="stars">{Array.from({ length: 5 }).map((_, index) => <Star key={index} size={18} fill="currentColor" />)}</div>
               <blockquote>"{testimonial.review}"</blockquote>
               <div className="testimonial-person">
-                <img src={testimonial.image} alt={testimonial.name} loading="lazy" />
+                <img src={testimonial.image} alt={`${testimonial.name}, ${testimonial.course} student`} loading="lazy" width="96" height="96" />
                 <div><strong>{testimonial.name}</strong><span>{testimonial.course}</span></div>
               </div>
             </motion.article>

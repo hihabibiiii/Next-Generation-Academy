@@ -9,7 +9,7 @@ export default function About() {
     <section className="section about-section" id="about">
       <div className="container split">
         <motion.div className="about-visual" variants={slideRight} initial="hidden" whileInView="visible" viewport={viewport} transition={{ duration: 0.65 }}>
-          <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1000&q=80" alt="Students learning in a modern classroom" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1000&q=80" alt="Students learning in a modern classroom at a training institute" loading="lazy" width="1000" height="667" />
           <div className="layer-card"><Award size={22} /><span>Certified Training</span></div>
         </motion.div>
 

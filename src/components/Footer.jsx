@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <motion.div variants={fadeUp}>
           <a href="#home" className="brand footer-brand">
-            <span className="brand-mark logo-mark"><img src={logo} alt="" /></span>
+            <span className="brand-mark logo-mark"><img src={logo} alt="" width="44" height="44" /></span>
             <span><strong>{instituteInfo.name}</strong><small>Professional Institute</small></span>
           </a>
           <p>Premium skill training institute for students, graduates, and working professionals.</p>
@@ -28,7 +28,7 @@ export default function Footer() {
         </motion.div>
         <motion.div variants={fadeUp}>
           <h3>Courses</h3>
-          {courses.slice(1, 6).map((course) => <a key={course.id} href="#courses">{course.title}</a>)}
+          {courses.slice(1, 6).map((course) => <a key={course.id} href="#courses" aria-label={`View ${course.title} course details`}>{course.title}</a>)}
         </motion.div>
         <motion.div variants={fadeUp}>
           <h3>Contact</h3>

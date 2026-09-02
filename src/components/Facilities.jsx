@@ -15,7 +15,7 @@ export default function Facilities() {
         <motion.div className="facility-grid" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewport}>
           {facilities.map(({ icon: Icon, title, text, image }) => (
             <motion.article className="facility-card" key={title} variants={fadeUp}>
-              <img src={image} alt={title} loading="lazy" />
+              <img src={image} alt={`${title} at Next Generation Academy`} loading="lazy" width="420" height="280" />
               <div className="facility-content">
                 <Icon size={24} />
                 <h3>{title}</h3>
