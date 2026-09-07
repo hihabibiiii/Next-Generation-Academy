@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "919839848517";
+export const WHATSAPP_NUMBER = "917068615386";
 
 const valueOrFallback = (value, fallback = "Not provided") => {
   const normalized = String(value || "").trim();

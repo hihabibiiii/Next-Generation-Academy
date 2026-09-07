@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
 import { instituteInfo } from "../data/courses";
 import { fadeUp, slideLeft, slideRight, staggerContainer, viewport } from "../motion";
+import { sendEnrollmentToWhatsApp } from "../utils/whatsapp";
 
 const empty = { name: "", phone: "", email: "", message: "" };
 
@@ -17,19 +18,53 @@ export default function Contact() {
   };
 
   const submit = (event) => {
-    event.preventDefault();
-    const missing = Object.values(form).some((value) => !value.trim());
-    const invalidEmail = form.email && !/^\S+@\S+\.\S+$/.test(form.email);
-    if (missing || invalidEmail) {
-      setStatus("Please complete all fields with a valid email.");
-      return;
-    }
-    const saved = JSON.parse(localStorage.getItem("ngaContactMessages") || "[]");
-    saved.push({ ...form, submittedAt: new Date().toISOString() });
-    localStorage.setItem("ngaContactMessages", JSON.stringify(saved));
-    setForm(empty);
-    setStatus("Your message has been sent successfully.");
-  };
+  event.preventDefault();
+
+  const missing = Object.values(form).some((value) => !value.trim());
+  const invalidEmail = form.email && !/^\S+@\S+\.\S+$/.test(form.email);
+
+  if (missing || invalidEmail) {
+    setStatus("Please complete all fields with a valid email.");
+    return;
+  }
+
+  const saved = JSON.parse(
+    localStorage.getItem("ngaContactMessages") || "[]"
+  );
+
+  saved.push({
+    ...form,
+    submittedAt: new Date().toISOString(),
+  });
+
+  localStorage.setItem(
+    "ngaContactMessages",
+    JSON.stringify(saved)
+  );
+
+  // Redirect to WhatsApp
+  const message = `Hello Next Generation Academy,
+
+I want to contact you.
+
+----------------
+CONTACT DETAILS
+----------------
+
+Name: ${form.name}
+Phone: ${form.phone}
+Email: ${form.email}
+
+Message:
+${form.message}
+
+Thank you.`;
+
+  const whatsappUrl =
+    `https://wa.me/917068615386?text=${encodeURIComponent(message)}`;
+
+  window.location.href = whatsappUrl;
+};
 
   const details = [
     { icon: MapPin, label: "Institute Address", value: instituteInfo.address },
@@ -52,10 +87,19 @@ export default function Contact() {
               </article>
             ))}
           </div>
-          <div className="map-card" aria-label="Google Maps placeholder">
-            <MapPin size={34} />
-            <span>Google Maps Location</span>
-          </div>
+          <a
+  className="map-card"
+  href="https://maps.app.goo.gl/1NewyP3rXXt8jDLMA"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Open Next Generation Academy location in Google Maps"
+>
+  <MapPin size={34} />
+  <span>
+    <strong>Google Maps Location</strong>
+    <small>Get Directions →</small>
+  </span>
+</a>
         </motion.div>
 
         <motion.form className="contact-form" onSubmit={submit} noValidate variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewport}>
