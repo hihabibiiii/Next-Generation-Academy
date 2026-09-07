@@ -2,6 +2,9 @@ import sahilImage from "../assets/images/sahil.jpeg";
 import asifImage from "../assets/images/asif.png";
 import shivamImage from "../assets/images/shivam.jpeg";
 import mamImage from "../assets/images/mam.jpeg";
+import heroSlidesImage from "../assets/images/heroSlide1.jpg";
+import heroSlidesImage2 from "../assets/images/heroSlide2.jpg";
+import heroSlidesImage3 from "../assets/images/heroSlide3.jpg";
 import {
   Award,
   BadgeCheck,
@@ -30,19 +33,19 @@ export const heroSlides = [
     eyebrow: "Welcome To Next Generation Academy",
     title: "Learn Today. Lead Tomorrow.",
     text: "Practical education for the careers of tomorrow.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=80",
+    image: heroSlidesImage,
   },
   {
     eyebrow: "Project Based Learning",
     title: "Train With Modern Labs And Mentors.",
     text: "Hands-on projects, expert feedback, and certification support.",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1800&q=80",
+    image: heroSlidesImage2,
   },
   {
     eyebrow: "Admissions Open",
     title: "Career-Focused Courses For Ambitious Students.",
     text: "Choose from technology, design, accounting, and marketing programs.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
+    image: heroSlidesImage3,
   },
 ];
 

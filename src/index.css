@@ -403,8 +403,11 @@ p {
   position: absolute;
   inset: 0;
   width: 100%;
+  max-width: none;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  transform-origin: center center;
 }
 
 .hero-overlay {
@@ -1341,10 +1344,25 @@ p {
   }
 
   .hero-bg,
-  .hero-overlay {
-    bottom: auto;
-    height: 465px;
-  }
+.hero-overlay {
+  left: 0;
+  right: 0;
+  bottom: auto;
+  width: 100%;
+  max-width: none;
+  height: 465px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform-origin: center center;
+}
 
   .hero-inner {
     min-height: 0;
