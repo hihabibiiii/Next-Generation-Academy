@@ -1,3 +1,7 @@
+import sahilImage from "../assets/images/sahil.jpeg";
+import asifImage from "../assets/images/asif.png";
+import shivamImage from "../assets/images/shivam.jpeg";
+import mamImage from "../assets/images/mam.jpeg";
 import {
   Award,
   BadgeCheck,
@@ -62,23 +66,30 @@ export const facilities = [
 
 export const testimonials = [
   {
-    name: "Ayesha Khan",
+    name: "Sahil",
     course: "Web Development",
     review: "The practical training helped me gain confidence and real-world skills. The faculty support made every topic easier to understand.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
+    image: sahilImage,
   },
   {
-    name: "Rahul Sharma",
+    name: "Asif",
     course: "Python Programming",
     review: "I joined with basic knowledge and completed the course with practical projects I could confidently show in interviews.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+    image: asifImage
   },
   {
-    name: "Priya Mehta",
-    course: "Tally & Accounting",
-    review: "The accounting practice sessions were clear, useful, and connected to real office work. I felt job-ready after the course.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-  },
+  "name": "Aradhana",
+  "course": "ADCA (Advanced Diploma in Computer Applications)",
+  "review": "Teaching ADCA was a rewarding experience. Students learned MS Office, internet tools, and basic programming with ease. Their confidence grew through practical projects, preparing them well for office environments.",
+  "image": mamImage
+},
+{
+  "name": "Shivam Varma",
+  "course": "ADCA (Advanced Diploma in Computer Applications)",
+  "review": "The ADCA course gave me practical skills in MS Office, internet tools, and basic programming. Hands-on projects boosted my confidence for office work.",
+  "image": shivamImage
+}
+
 ];
 
 export const stats = [
