@@ -18,7 +18,7 @@ export default function Footer() {
           <p>Premium skill training institute for students, graduates, and working professionals.</p>
           <div className="socials">
             <a href="#home" aria-label="Facebook"><Facebook size={18} /></a>
-            <a href="#home" aria-label="Instagram"><Instagram size={18} /></a>
+            <a href="https://www.instagram.com/nextgena706/?utm_source=ig_web_button_share_sheet" aria-label="Instagram"><Instagram size={18} /></a>
             <a href="#home" aria-label="LinkedIn"><Linkedin size={18} /></a>
           </div>
         </motion.div>

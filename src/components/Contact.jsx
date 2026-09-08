@@ -87,19 +87,29 @@ Thank you.`;
               </article>
             ))}
           </div>
+          <iframe
+            title="Next Generation Academy Location"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3568.158!2d84.002926!3d26.576077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDM0JzM0LjMiTiA4NMKwMDAnMTAuNSJF!5e0!3m2!1sen!2sin!4v1"
+            width="100%"
+            height="300"
+            style={{ border: 0, borderRadius: "18px", display: "block" }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
           <a
-  className="map-card"
-  href="https://maps.app.goo.gl/1NewyP3rXXt8jDLMA"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Open Next Generation Academy location in Google Maps"
->
-  <MapPin size={34} />
-  <span>
-    <strong>Google Maps Location</strong>
-    <small>Get Directions →</small>
-  </span>
-</a>
+            className="map-card"
+            href="https://maps.app.goo.gl/1NewyP3rXXt8jDLMA"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Next Generation Academy location in Google Maps"
+          >
+            <MapPin size={34} />
+            <span>
+              <strong>Open in Google Maps</strong>
+              <small>Get Directions →</small>
+            </span>
+          </a>
         </motion.div>
 
         <motion.form className="contact-form" onSubmit={submit} noValidate variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewport}>
